@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
 import "./style.css";
+import Back from './componenets/Back';
+
 
 const App=() =>{
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -37,15 +39,23 @@ const App=() =>{
 
     // Generate QR code for the current user
     const dataString = JSON.stringify(userData);
-    setQrData(dataString); // Set QR code data
-    setIsSubmitted(true); // Set form as submitted
+    setQrData(dataString); 
+    setIsSubmitted(true); 
   };
+  const handleAnimationComplete = () => {
+    console.log('All letters have animated!');
+  };
+  
 
-  return (
+  return (  
+
+    
+
+    
     <div className="Main-container">
       {/* FORM CONTAINER */}
       <div className="form-container">
-        <h2>User Information Form</h2>
+                 <h1> User&apos;s Information</h1>
         <form onSubmit={handleSubmit}>
           <div>
             <label>Name:</label>
